@@ -1,0 +1,30 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-left_large">
+            <template for:each={userDetail} for:item="data">
+                <ul key={data.Id}>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col  slds-m-left_small ">
+                            <lightning-icon icon-name={iconName} class="slds-m-left_medium"></lightning-icon>
+                            &nbsp;&nbsp;<b >  &nbsp;&nbsp; {data.Route} </b>
+                        </div>
+                        <div class="slds-col slds-m-right_large" align="right">
+                            <li><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data.Hour} h {data.Minutes}
+                                    min</b> </li>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-m-left_x-large">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Fastest Route, despite </p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;the usual traffic</p>
+                        </div>
+                        <div class="slds-col slds-m-right_large" align="right">
+                            <li><b>{data.Distance} KM</b> </li>
+                        </div>
+                    </div>
+                    <hr />
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  title="Opportunity List View Input Field Example" icon-name="custom:custom15" >
+        <div class="slds-m-around_large">
+            <lightning-input label="Opportunity Name" type="text" value={name} class="ForInput"></lightning-input>
+            <lightning-input label="Close Date" value={closeDate} type="text" class="ForInput"></lightning-input>
+            <lightning-combobox
+                options={stageOption}
+                label="Selected Stage"
+                value={stage}  
+                class="ForInput"
+
+            ></lightning-combobox>
+            <br/>
+            <lightning-button label="Update" variant="Brand" class="slds-m-top_large" onclick={updateButton} ></lightning-button>
+            </div>
+    </lightning-card>
+    
+</template>

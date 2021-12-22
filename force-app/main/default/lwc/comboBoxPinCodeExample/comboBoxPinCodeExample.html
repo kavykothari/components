@@ -1,0 +1,32 @@
+<template >
+	<lightning-card title="Depened Picklist ComboBox PinCode Example" icon-name="custom:custom5">
+		<div class="slds-m-around_large">
+		<lightning-combobox
+			label="Country"
+			value={getcountry}
+			placeholder="Select Country"
+			options={countryArr}
+			onchange={handleCountry} 
+			class="slds-m-left_medium"
+			></lightning-combobox>
+		<lightning-combobox
+			label="State"
+			value={getstate}
+			placeholder="Select State"
+			options={stateOption}
+			onchange={handleState} 
+			class="slds-m-left_medium"
+		></lightning-combobox>
+		<lightning-combobox
+			name="City"
+			label="City"
+			value={getcity}
+			placeholder="Select City"
+			options={cityOption}
+			onchange={handlecity} 
+			class="slds-m-left_medium"
+		></lightning-combobox>
+		<lightning-input label="Pincode" value={PinValue}></lightning-input>
+		</div>
+	</lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Remove Section When Not Needed" icon-name="custom:custom12">
+        <div class="slds-m-around_large">
+            <template if:true={isDisplay}>
+                <p><b>Hello,{name} </b></p>
+            </template>
+
+            <lightning-input label="Enter Name" type="text" value={name} onchange={handelName} required=""></lightning-input>
+            <lightning-input label="Enter Email" type="text" value={email} ></lightning-input>
+            <lightning-input label="Enter Phone" type="text" value={phone} ></lightning-input>
+        </div>
+    </lightning-card>
+    
+</template>

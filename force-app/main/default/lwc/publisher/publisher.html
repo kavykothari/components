@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Publisher (PubSub Example)" icon-name="custom:custom3" >
+        <div class="slds-m-around_large">
+            <lightning-button label="Send To Subscriber" variant="brand" onclick={handleSend}></lightning-button>
+            <hr>
+            <lightning-input type="text" label="Enter First Name Here" class="forInput"></lightning-input>
+            <lightning-input type="text" label="Enter Last Name Here" class="forInput"></lightning-input>
+            <lightning-input type="email" label="Enter Email Here" class="forInput"></lightning-input>
+            <lightning-input type="number" label="Enter Mobile Number Here" class="forInput"></lightning-input>
+            <lightning-button label="Send" variant="" onclick={handleSendData}></lightning-button>
+            <hr>
+            <p><b>Name</b>{displayVal.name}</p>
+            <p><b>Email</b>{displayVal.email}</p>
+            <p><b>Phone</b>{displayVal.number}</p>
+
+
+        </div>
+    </lightning-card>
+    
+</template>

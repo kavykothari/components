@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Checkbox Example" icon-name="custom:custom6">
+        <div class="slds-m-around_large">
+            <lightning-checkbox-group
+                options={hobbiesOptions}
+                value={defaultHobbies}
+                label="Select Hobbies"
+                onchange={handleHobbiesChange}
+            >
+            </lightning-checkbox-group>
+            <p><b>Select Hobbies : </b> {defaultHobbies} </p>
+        </div>
+    </lightning-card>
+</template>

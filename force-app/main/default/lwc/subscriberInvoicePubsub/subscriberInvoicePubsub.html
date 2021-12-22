@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Invoice Subscriber (PubSub Example) ">
+        <div class="slds-m-around_large">
+            <table>
+                <thead>
+                    <tr>
+                        <th> S.No.</th>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={getdata} for:item="user">
+                        <tr key = {user}>
+                            <td>{user.indexOfProduct}</td>
+                            <td>{user.product}</td>
+                            <td>{user.qty}</td>
+                            <td>{user.amount}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </br>
+        <hr>
+            <p><b>Grand Total :</b>{total}</p>
+            <hr>
+            
+        <lightning-input type="checkbox"
+        label="If You Want To Do Any Changes"
+        onchange={handleInputCheck}>
+
+    </lightning-input>
+        </div>
+    </lightning-card>
+    
+</template>

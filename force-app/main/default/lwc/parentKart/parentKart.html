@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Parent - Child Kart Example" icon-name="custom:custom16">
+        <div class="slds-m-around_large">
+            <lightning-checkbox-group
+            options={selectCheckBox}
+            value={checkBoxValues}
+            label="Select Items"
+            onchange={handleCheckBox}
+        >
+        </lightning-checkbox-group>
+        <br/>
+                <c-child-kart class="childKartComponent"></c-child-kart>
+
+        </div>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,33 @@
+<template>
+<lightning-card title="Index Increment Assignment" icon-name="standard:event">
+    <div class="slds-m-around_large">
+        <table>
+            <thead>
+                <tr>
+                    <th> S No</th>
+                    <th> Name </th>
+                    <th> Email </th>
+                    <th> Phone </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="user">
+                    <tr key={user}>
+                        <td>{user.index}</td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.phone}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+
+        
+    </div>
+
+
+
+</lightning-card>
+
+</template>

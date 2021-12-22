@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Calculator" icon-name="standard:partners">
+    <div class="slds-m-around_large">
+    <lightning-input label="Enter 1st Number" type="number"  class="first"></lightning-input>
+    <lightning-input label="Enter 2nd Number" type="number"  class="second"></lightning-input>
+    <lightning-layout class = "slds-m-bottom_small slds-m-top_small">
+        <lightning-layout-item  class = "slds-m-left_x-small">
+            <lightning-button label="Sum" variant="success" data-name="Sum" onclick={handleCalculator}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item  class = "slds-m-left_x-small"><lightning-button data-name="Sub" label="Subtract" variant="Brand" onclick={handleCalculator}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item  class = "slds-m-left_x-small"><lightning-button data-name="Mul" label="Multiply" variant="brand-outline" onclick={handleCalculator}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item  class = "slds-m-left_x-small"><lightning-button data-name="Divide" label="Divide" variant="destructive" onclick={handleCalculator}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item  class = "slds-m-left_x-small"><lightning-button  data-name="Mod" label="Mod" variant="Neutral" onclick={handleCalculator}></lightning-button>
+            </lightning-layout-item>
+            </lightning-layout>
+
+            <template if:true={isDisplay}>
+                <ul>
+                    <li style={color}><b>{label} Of {first} and {second} Is = {third} </b></li>
+                </ul>
+            </template>
+    </div>
+    </lightning-card>
+    </template>

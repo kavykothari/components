@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Radio Example" icon-name="custom:custom7">
+        <div class="slds-m-around_large">
+            <lightning-radio-group 
+                options={statusOptions}
+                value={selectedStatus}
+                onchange={handleStatus}
+            >
+            </lightning-radio-group>
+            <p><b>Selected Status : </b>{selectedStatus}</p>
+        </div>
+    </lightning-card>
+</template>

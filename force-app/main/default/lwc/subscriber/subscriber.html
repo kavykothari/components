@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Subscriber (PubSub Example)" icon-name="custom:custom4" >
+        <div class="slds-m-around_large">
+              <b> Message : </b>{message}
+            <hr>
+            <ul>
+                <li><b> First Name : </b>{userDetails.firstname}</li>
+                <li><b> Last Name : </b>{userDetails.lastname}</li>
+                <li><b> Email : </b>{userDetails.email}</li>
+                <li><b> Phone Number : </b>{userDetails.number}</li>
+            </ul>
+
+        </br>
+            <lightning-button label="Subscribe" variant="destructive" onclick={handleSubscribe}></lightning-button>
+    </br>
+            <lightning-button label="Send Values To Publisher" variant="Brand" onclick={handleSendToPublisher}></lightning-button>
+
+        </div>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,62 @@
+<template>
+    <lightning-card class="slds-m-around_medium">
+        <div class="slds-m-left_large slds-m-right_large">
+            <h2><b>Contacts</b></h2>
+            <br />
+            <h6>Search</h6>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input type="text" placeholder="Search Text Here" class="inputText">
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-m-top_medium">
+                    <lightning-button label="Search" variant="brand" onclick={handelSearchContact}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox options={limitOptions} value={pageSize} onchange={handelLimit} style="width:190px; float:right">
+                    </lightning-combobox>
+                </div>
+            </div>
+            <br>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" if:true={presentData}>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Account Name</th>
+                        <th>Phone</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contactList} for:item="contact" if:true={presentData}>
+                        <tr key={contact}>
+                            <td>{contact.Name}</td>
+                            <td>{contact.Email}</td>
+                            <td if:true={contact.Account}>{contact.Account.Name}</td>
+                            <td if:false={contact.Account}></td>
+                            <td>{contact.Phone}</td>
+                            <td>{contact.Type__c}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <table>
+                <template if:true={noData}>
+                    <tr>
+                        <td>Record Not Found</td>
+                    </tr>
+                </template>
+            </table>
+            <br>
+        </div>
+        <div if:true={presentData} class="slds-float_right">
+            <lightning-button title="first" icon-name="utility:jump_to_left" class="slds-m-left_small" label="First"  icon-position="left" onclick={handleFirst}></lightning-button>
+            <lightning-button title="previous"  icon-name="utility:chevronleft" class="slds-m-left_small" label="Previous" icon-position="left" onclick={handlePrevious}></lightning-button>
+            <lightning-button title="next"  icon-name="utility:chevronright" class="slds-m-left_small" label="Next" icon-position="right" onclick={handleNext}></lightning-button>
+            <lightning-button title="last" icon-name="utility:jump_to_right" class="slds-m-left_small slds-m-right_small" label="Last" icon-position="right" onclick={handleLast}></lightning-button>
+        </div>
+        <br/>
+        <br/>
+    </lightning-card>
+</template>

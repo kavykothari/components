@@ -1,0 +1,11 @@
+<template>
+    <lightning-card class="slds-m-around_large">
+        <div class="slds-m-left_large slds-m-right_large">
+    <lightning-progress-indicator current-step={currentStatus}  type="path" variant="base">
+        <template for:each={steps} for:item="step">
+            <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+    </div>
+    </lightning-card>
+</template>

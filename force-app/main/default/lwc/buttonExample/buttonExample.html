@@ -1,0 +1,22 @@
+<template>
+<lightning-card title="Button Example" icon-name="standard:partners">
+<div class="slds-m-around_large">
+<lightning-input label="Enter Name" type="text"  value={name} class="name" ></lightning-input>
+<lightning-input label="Enter Email" type="email" value={email}  class="email"></lightning-input>
+<lightning-input label="Enter Phone" type="number" value={number} class="number"></lightning-input>
+
+<lightning-layout class = "slds-m-bottom_small slds-m-top_small">
+<lightning-layout-item  class = "slds-m-right_small">
+    <lightning-button label="Save" variant="Brand" onclick={handelSave}> </lightning-button>
+                <template if:true={isDisplay}>
+                    <ul>
+                        <li><b>Name </b>: <b> {name} </b></li>
+                        <li><b>Email </b>: <b> {email} </b></li>
+                        <li><b>Phone </b>: <b> {number} </b></li>
+                    </ul>       
+                </template>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Map API" icon-name="standard:partners" >
+        <div class="slds-m-around_large" if:true={example}>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-button-icon icon-name="utility:travel_and_places"   variant="border-filled" alternative-text="Settings" title="car" onclick={handleCar} ></lightning-button-icon>
+        <lightning-button-icon icon-name="custom:custom36"   variant="border-filled" alternative-text="Add user" class="slds-m-left_xx-small" title="train" onclick={handleTrain}></lightning-button-icon>
+        <lightning-button-icon icon-name="utility:trail"    variant="border-filled" alternative-text="Delete"   class="slds-m-left_xx-small" title="walk" onclick={handleWalk}></lightning-button-icon>
+        <lightning-button-icon icon-name="custom:custom80"      variant="border-filled" alternative-text="Save"     class="slds-m-left_xx-small" title="cycle" onclick={handleBike}></lightning-button-icon>
+        <lightning-button-icon icon-name="custom:custom20"  variant="border-filled" alternative-text="Bookmark" class="slds-m-left_xx-small" title="airplane"  onclick={handleFlight}></lightning-button-icon>
+    </div>
+    <lightning-input  placeholder="Source" type="text" onblur={handleCar}  class="ForInput"></lightning-input>
+    <lightning-input  type="text" placeholder="Destination"  onblur={handleCar}  class="ForInput"></lightning-input>
+        </div>
+    </br>
+    <c-child-Map class="child" if:true={showHide}></c-child-Map>
+    <div if:false={showHide} align="center">
+        <p><b> No Records Found</b></p>
+    </div>
+    </lightning-card>
+</template>

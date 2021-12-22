@@ -1,0 +1,86 @@
+<template>
+    <lightning-card title="Publisher (Invoice PubSub Example)" icon-name="custom:custom13" >
+      <div class="slds-m-around_large">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-combobox
+                options={qtyOptions}
+                label="Select Qty"
+                onchange={handleQtyChange}     
+                value={Qty}
+            ></lightning-combobox>
+                <p><b>QTY : </b> {Qty}</p>  
+
+            </lightning-layout-item>
+
+            <lightning-layout-item>
+                <lightning-combobox
+                options={productOptions}
+                label="Select Product"
+                onchange={handleProductChange}     
+                value={Product}          
+            ></lightning-combobox>
+                <p><b>Product : </b> {Product}</p>  
+
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-input type="number" label="Enter Amount" class="amountOfProduct"></lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item>
+                <lightning-button label="ADD" variant="brand" data-index={index} onclick={handleAdd}></lightning-button>
+
+            </lightning-layout-item>
+        </lightning-layout>   
+     </div>
+    </br>
+    <hr>
+    <div class="slds-m-around_large">
+           <table if:true={hideShow}>
+        <thead>
+            <tr>
+                <th> S.No.</th>
+                <th>Qty</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Cancel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={getedBackData} for:item="user" for:index="index">
+                <tr key = {user}>
+                   
+                    <td>{user.indexOfProduct}</td>
+                    <td>  
+                        <lightning-combobox
+                        options={qtyOptions}
+                        label="Selected Qty"
+                        value={user.qty}      
+                        class="forQtyInput"          
+    
+                    ></lightning-combobox>
+                </td>
+                    <td>
+                        <lightning-combobox
+                        options={productOptions}
+                        label="Selected Product"
+                        value={user.product} 
+                        class="forProductInput"
+        
+                    ></lightning-combobox>
+                    </td>
+                    <td>
+                        <lightning-input type="number" label="Enter Amount" value={user.amount} class="forAmountInput"></lightning-input>
+                    </td>
+                    <td>
+                        <lightning-button label="Cancel" data-index={index} data-name={user.indexOfProduct} onclick={handleCancel} ></lightning-button>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+    <lightning-button label="Submit" variant="Brand" onclick={sendAgainToSubscriber} if:true={hideShow}></lightning-button>
+    </div>
+    </lightning-card>
+    
+</template>

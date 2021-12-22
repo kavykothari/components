@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="ComboBox Example" icon-name="custom:custom5">
+        <div class="slds-m-around_large">
+                   
+        <lightning-combobox
+            options={countryOptions}
+            label="Select Country"
+            onchange={handleCountryChange}     
+            value={selectedCountry}          
+        ></lightning-combobox>
+            <p><b>Select Country : </b> {selectedCountry}</p>          
+
+            <lightning-combobox
+                options={stateOptions}
+                label="Select State"
+                onchange={handleStateChange} 
+                value={selectedState}               
+            ></lightning-combobox>
+            <p><b>Select State : </b> {selectedState} </p>
+
+            <lightning-combobox
+            options={citysOption}
+            label="Select City"
+            onchange={handleCityChange}
+            value={selectedCity}
+        ></lightning-combobox>
+        <p><b>Selected City : </b> {selectedCity} </p>
+
+        </div>
+    </lightning-card>
+</template>

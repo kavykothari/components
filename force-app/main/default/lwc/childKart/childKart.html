@@ -1,0 +1,14 @@
+<template>
+    <div class="container">
+        <template if:true={hideShow}>
+            <div> Hello I m Child Kart</div>
+        <img class="product-img" src={image}></img>
+        <div class="slds-text-heading_small">Bike Name : {name}</div>
+        <div class="price">Price :{prices} </div>
+        <div>
+            <lightning-button label="Add" variant="Brand"></lightning-button>
+        </div>
+        <div class="description">Bike  Discription <br/> {discription}</div>
+        </template>
+        </div>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card class="slds-m-around_medium">
+        <div class="slds-m-left_large slds-m-right_large">
+            <h2><b>Contacts Managment Screen</b></h2>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input  onblur={searchInputWord} class="inputText"  placeholder="Search Contact Here" type='search' >
+                    </lightning-input>
+                </div>
+            </div>
+          </div>
+        </br>
+          <template for:each={userList} for:item="user">
+          <c-child-contactmanagmentscreen key={user} mydata={user}></c-child-contactmanagmentscreen>
+        </template>
+        </lightning-card>
+</template>
+
